@@ -18,43 +18,19 @@
         <li>
             <a href="#" data-toggle="collapse" aria-expanded="false">
             	<i class="fas fa-adjust"></i>
-        		Dashboard
+        		Главная
         	</a>
         </li>
         <li>
             <a href="#">
             	<i class="fas fa-adjust"></i>
-        		Dashboard
+        		Мой дневник
         	</a>
         </li>
         <li>
             <a href="#">
             	<i class="fas fa-adjust"></i>
-        		Dashboard
-        	</a>
-        </li>
-        <li>
-            <a href="#">
-            	<i class="fas fa-adjust"></i>
-        		Dashboard
-        	</a>
-        </li>
-        <li>
-            <a href="#">
-            	<i class="fas fa-adjust"></i>
-        		Dashboard
-        	</a>
-        </li>
-        <li>
-            <a href="#">
-            	<i class="fas fa-adjust"></i>
-        		Dashboard
-        	</a>
-        </li>
-        <li>
-            <a href="#">
-            	<i class="fas fa-adjust"></i>
-        		Dashboard
+        		Профиль
         	</a>
         </li>
     </ul>

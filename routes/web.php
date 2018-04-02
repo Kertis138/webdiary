@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/mydiary', 'DiaryController@mydiary')->name('mydiary');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

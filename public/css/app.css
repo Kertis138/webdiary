@@ -169,6 +169,15 @@
   margin-right: 0;
 }
 
+#mydiary-wrapper {
+  background-color: white;
+  padding: 10px;
+}
+
+#mydiary-wrapper .twit {
+  padding-top: 10px;
+}
+
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors

@@ -19,7 +19,7 @@
     <div id="app">
     </div>
     @include('include.header')
-    <div id="wrapper" class="">
+    <div id="wrapper" class="active toggled">
         @include('include.sidebar')  
         @yield('content')
     </div>  
