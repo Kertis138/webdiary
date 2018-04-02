@@ -1,7 +1,6 @@
-@extends('mydiary.layout')
+@extends('layouts.app')
 
-@section('mydiary-wrapper')
-	@parent
+@section('content')
 
 
 @foreach ($twits as $twit)
@@ -15,7 +14,7 @@
 	--}}
 
 
-    <div class="twit">
+    <div class="twit diary-block">
     	<div class="first container">
     		{{$twit->name}}
     	</div>
@@ -25,7 +24,10 @@
     	</div>
 
     	<div class="third container">
-    		{{$twit->likes}} likes
+            <span class="likes">
+            {{$twit->likes}} 
+            <i class="fas fa-heart"></i>
+            </span>
     	</div>
 	</div>
 

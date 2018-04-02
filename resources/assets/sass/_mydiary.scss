@@ -1,11 +1,15 @@
-$mydiary-wrapper-color: white;
+.twit {
 
-#mydiary-wrapper {
-	background-color: $mydiary-wrapper-color;
-	padding: 10px;
-
-	.twit {
-		padding-top: 10px;
+	.likes>svg{
+		color: lightblue;
 	}
+
+	.likes>svg:hover {
+		cursor:pointer;
+		color: red;
+	}
+
 }
+
+
 

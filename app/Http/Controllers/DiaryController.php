@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+use App\Twit as Twit;
 
 class DiaryController extends Controller
 {
@@ -17,11 +17,8 @@ class DiaryController extends Controller
 
     public function mydiary()
     {
-    	$name = Auth::user()->name;
-    	$id = Auth::id();
-    	$twits = DB::select('select * from twits where user_id = '.$id);
-    	$data = array("twits"=>$twits, "username"=>$name );
-        return view('mydiary.list', $data);
+        $twits = Twit::where('user_id',Auth::user()->id)->get();
+        return view('mydiary.list', ['twits'=>$twits]);
 
     }
 }

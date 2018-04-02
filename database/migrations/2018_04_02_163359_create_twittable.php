@@ -10,11 +10,12 @@ class CreateTwittable extends Migration
     {
             Schema::create('twits', function (Blueprint $table) {
               $table->increments('id');
-              $table->integer('user_id');
+              $table->unsignedInteger('user_id');
+              $table->foreign('user_id')->references('id')->on('users');
               $table->string('name');
               $table->timestamps();
               $table->text('twit');
-              $table->integer('likes');
+              $table->unsignedInteger('likes');
          });
     }
 

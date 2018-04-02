@@ -19,10 +19,20 @@
     <div id="app">
     </div>
     @include('include.header')
-    <div id="wrapper" class="active toggled">
-        @include('include.sidebar')  
-        @yield('content')
-    </div>  
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2 diary-block">
+          @include('include.leftbar')
+        </div>
+        <div class="col-sm-7">
+          @yield('content')
+        </div>
+        <div class="col-sm-3 diary-block">
+          @include('include.rightbar')
+        </div>
+      </div>
+    </div>
+
 <script>
     window.Laravel = <?php echo json_encode([
         'csrfToken' => csrf_token(),
