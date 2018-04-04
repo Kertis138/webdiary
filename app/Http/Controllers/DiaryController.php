@@ -17,8 +17,8 @@ class DiaryController extends Controller
 
     public function mydiary()
     {
-        $twits = Twit::where('user_id',Auth::user()->id)->get();
-        return view('mydiary.list', ['twits'=>$twits]);
+        //$twits = Twit::where('user_id',Auth::user()->id)->get();
+        return view('layouts.mydiary');
 
     }
 }

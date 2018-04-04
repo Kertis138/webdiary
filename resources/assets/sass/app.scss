@@ -7,20 +7,13 @@
 @import "header";
 @import "sidebar";
 @import "mydiary";
+@import "user-styles";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  overflow-x: hidden;
+	overflow-x: hidden;
+	font-family: sans-serif; 
+	letter-spacing: .02em;
 }
-
-$mydiary-color: white;
-.diary-block {
-	background-color: $mydiary-color;
-	padding: 10px;
-	border-top: 1px solid $body-bg;
-	border-radius: 10px;
-	margin-top: 5px;
-}
-
