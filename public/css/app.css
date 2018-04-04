@@ -1,4 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);#top-navbar {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.underline_h5 {
+  height: 5px;
+  background-color: transparent;
+}
+
+#top-navbar {
   border-bottom: 1px solid #d5d5d5;
   font-weight: bold;
 }
@@ -9,6 +14,10 @@
 
 #top-navbar a:hover {
   color: #a09062;
+}
+
+#top-navbar a:hover div.underline_h5 {
+  background-color: #a09062;
 }
 
 #leftbar {
@@ -84,12 +93,145 @@
   background-image: url(/images/testlogo.jpg?743257e52b7c968b0b23ea1d600d69e7);
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: -100px;
+  margin-top: -150px;
   border: 7px solid white;
 }
 
 #left-user-info #userlink {
-  font-size: 21px;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 28px;
+  margin-right: 2px;
+  word-wrap: break-word;
+  color: #5d5656;
+}
+
+#left-user-info #userlink_after {
+  display: block;
+  font-weight: normal;
+  font-size: 16px;
+  color: gray;
+}
+
+#left-user-info #info-box div {
+  color: gray;
+}
+
+#left-user-info #info-box svg {
+  color: gray;
+}
+
+#content-box {
+  background-color: #f8f9fa;
+  margin-top: 15px;
+  border: 1px solid #f1eded;
+}
+
+#content-box #content-title {
+  border-bottom: 1px solid #c7c7c7;
+  color: #5d5656;
+  cursor: default;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#content-box #add-notes {
+  background-color: #E8F5FD;
+  padding: 10px;
+}
+
+#content-box #add-notes #add_notes_photo {
+  width: 48px;
+  height: 48px;
+  background-image: url(/images/testlogo.jpg?743257e52b7c968b0b23ea1d600d69e7);
+  background-size: 48px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+#content-box #add-notes .form-group {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+#content-box #add-notes .form-group textarea {
+  resize: none;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+#content-box #add-notes .form-group textarea:-moz-placeholder {
+  color: #46587b;
+}
+
+#content-box #add-notes .form-group textarea::-webkit-input-placeholder {
+  color: #46587b;
+}
+
+#content-box #add-notes #push_note {
+  background-color: #92b5da;
+  border-radius: 7px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-top: 5px;
+  display: none;
+}
+
+#notes .twitblock {
+  border-top: 1px solid #e6e0e0;
+  padding: 10px 20px;
+  position: relative;
+}
+
+#notes .twitblock .dropdown {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+#notes .twitblock .dropdown svg {
+  color: gray;
+}
+
+#notes .twitblock .dropdown svg:hover {
+  color: #7da1b7;
+}
+
+#notes .twitblock .dropdown button {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#notes .twitblock .dropdown button:focus {
+  outline: none;
+}
+
+#notes .twitblock .twit_photo {
+  height: 48px;
+  width: 48px;
+  background-image: url(/images/testlogo.jpg?743257e52b7c968b0b23ea1d600d69e7);
+  background-size: 48px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+#notes .twitblock .twit_content {
+  padding-left: 10px;
+}
+
+#notes .twitblock .twit_content .twittitle_name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#notes .twitblock .twit_content .twittitle_name span {
+  color: gray;
 }
 
 /*!

@@ -9,7 +9,7 @@
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @show
     @section('scripts')
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
         <script defer src="{{ mix('js/app.js') }}"></script>
     @show
@@ -17,12 +17,11 @@
 </head>
 <body>
     <div id="app">
+
+        @include('include.header')
+
+        @yield('content');
     </div>
-    @include('include.header')
-
-    @yield('content');
-
-
 <script>
     window.Laravel = <?php echo json_encode([
         'csrfToken' => csrf_token(),
