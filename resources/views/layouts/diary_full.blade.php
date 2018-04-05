@@ -67,7 +67,7 @@
   <div class="row">
     <div class="col-sm-3" id="left-user-info">
         <div id="userlogo"></div>
-        <a href="#" id="userlink">{{$diary_user->name}}</a>
+        <a href="{{route('profile')}}" id="userlink">{{$diary_user->name}}</a>
         <span id="userlink_after">{{'@'.$diary_user->login}}</span>
 
         <div id="info-box">
@@ -87,13 +87,18 @@
         </div>
 
     </div>
-    <div class="col-sm-6">
+    <div class="col col-sm-6">
         <div class="container" id="content-box">
             @yield('content-box')
         </div>
     </div>
-    <div class="col-sm-3">
+
+    <div class="col col-sm-3">
+        {{--<div class="container" id="right-box">
+            @include('sidebar_elements.mysubs')
+        </div>--}}
     </div>
+
   </div>
 </div>
 

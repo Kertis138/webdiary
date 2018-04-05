@@ -16,7 +16,7 @@ Noty.overrideDefaults({
     closeTime: 600
 });
 
-new Noty({
-	text: 'Successfully added.'
-}).show();
+// new Noty({
+// 	text: 'Successfully added.'
+// }).show();
 

@@ -50,14 +50,15 @@ $imglogo-size: 48px;
 	.twitblock {
 		border-top: 1px solid #e6e0e0;
 		padding: 10px 20px;
-		position: relative;;
+		position: relative;
 
 		.dropdown{
 			position: absolute;
 			right: 10px;
 			top: 0px;
-			
+
 			svg {
+				cursor: pointer;
 				color: gray;
 				&:hover {
 					color: #7da1b7;
@@ -66,7 +67,7 @@ $imglogo-size: 48px;
 
 			button {
 				cursor: pointer;
-				padding: 0;
+				padding: 0px;
 				border: none;
 				background: none;
 				&:focus { 
@@ -84,18 +85,25 @@ $imglogo-size: 48px;
 			border-radius: 50%;
 			border: 1px solid white;
 		}
-
-		.twit_content {
-			padding-left: 10px;
-
-			.twittitle_name {
-				font-size: 14px;
-				font-weight: bold;
-
-				span {
-					color: gray;
-				}
-			}
-		}
 	}
+}
+
+.twit_content {
+	padding-left: 10px;
+}
+
+.twittitle_name {
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-bottom: 10px;
+
+	span {
+		color: gray;
+		padding-left: 10px;
+	}
+}
+
+.twittest {
+	padding-left: 10px;
 }

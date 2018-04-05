@@ -20,14 +20,6 @@
   background-color: #a09062;
 }
 
-#leftbar {
-  width: 185px;
-}
-
-#leftbar li {
-  text-align: left;
-}
-
 #content-title {
   border-bottom: 1px solid #c7c7c7;
   color: #5d5656;
@@ -96,6 +88,7 @@
 }
 
 #twits_wrapper .twitblock .dropdown svg {
+  cursor: pointer;
   color: gray;
 }
 
@@ -105,7 +98,7 @@
 
 #twits_wrapper .twitblock .dropdown button {
   cursor: pointer;
-  padding: 0;
+  padding: 0px;
   border: none;
   background: none;
 }
@@ -124,17 +117,24 @@
   border: 1px solid white;
 }
 
-#twits_wrapper .twitblock .twit_content {
+.twit_content {
   padding-left: 10px;
 }
 
-#twits_wrapper .twitblock .twit_content .twittitle_name {
+.twittitle_name {
   font-size: 14px;
   font-weight: bold;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
-#twits_wrapper .twitblock .twit_content .twittitle_name span {
+.twittitle_name span {
   color: gray;
+  padding-left: 10px;
+}
+
+.twittest {
+  padding-left: 10px;
 }
 
 #userbg {
@@ -226,6 +226,26 @@
   margin-top: 15px;
   border: 1px solid #f1eded;
   padding: 15px;
+}
+
+#right-box {
+  margin-top: 15px;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+
+#mysubs_title {
+  border-bottom: 1px solid #f1eded;
+  color: #5d5656;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 3px 10px;
+}
+
+#mysubs_content {
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 #save_profile {

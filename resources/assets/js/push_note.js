@@ -12,23 +12,28 @@ $.fn.enterKey = function (fnc) {
 }
 
 
-var push_note = $('#push_note ');
+var push_note = $('#push_note');
 var textarea_push = $('textarea#addnote_textarea');
 var twits_wrapper = $('#twits_wrapper');
 var twits_count = $('#twits_count');
 
 textarea_push.textareaAutoSize();
 
-textarea_push.keyup(function() {
-	if ($(this).val() !== "" )
-		push_note.css("display","block");
-	else 
+textarea_push.focusin(function() {
+	push_note.css("display","block");
+		
+});
+
+textarea_push.focusout(function() {
+	if(textarea_push.val() == "")
 		push_note.css("display","none");
 });
 
 
 push_note.click(function() {
 	var twit = textarea_push.val();
+	twit = twit.replace(/\n\r?/g, '<br />');
+
 	if(twit == "")
 		return;
 
@@ -43,7 +48,8 @@ push_note.click(function() {
 		},
 		success: function($data) {
 			//console.log($data);
-			textarea_push.val('');
+			textarea_push.val("");
+			textarea_push.height(25);
 			push_note.css("display","none");
 			twits_wrapper.prepend($data);
 			twits_wrapper.children().first().hide().show("slow");
@@ -68,7 +74,7 @@ $('#twits_wrapper').delegate(".delete-twit", "click", function() {
 		data: {},
 		success: function($data) {
 			//console.log($data);
-			var block = me.closest(".row");
+			var block = me.closest(".twitroot");
 			block.fadeOut("slow");
 			twits_count.html(parseInt(twits_count.html()) - 1);
 		},

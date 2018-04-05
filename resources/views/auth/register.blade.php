@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">Регистрация</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -19,7 +19,7 @@
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>Заполните поле с именем</strong>
                                     </span>
                                 @endif
                             </div>
@@ -33,7 +33,7 @@
 
                                 @if ($errors->has('login'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('login') }}</strong>
+                                        <strong>Введите другой логин</strong>
                                     </span>
                                 @endif
                             </div>
@@ -47,7 +47,7 @@
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>Неверный email</strong>
                                     </span>
                                 @endif
                             </div>
@@ -61,7 +61,7 @@
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>Неверный пароль</strong>
                                     </span>
                                 @endif
                             </div>
