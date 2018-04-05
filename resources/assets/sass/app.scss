@@ -6,11 +6,14 @@
 @import "variables";
 @import "header";
 @import "sidebar";
-@import "mydiary";
+@import "content-box";
 @import "user-styles";
+@import "profile";
 
-// Bootstrap
+// LIBS
 @import '~bootstrap/scss/bootstrap';
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/relax.scss";
 
 body {
 	overflow-x: hidden;

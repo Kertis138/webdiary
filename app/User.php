@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','login', 'location', 'link'
     ];
 
     /**
@@ -26,4 +26,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function logo() {
+        if (file_exists( public_path() . '/userdata/logo/' . $this->login . '.png')) {
+            return '/userdata/logo/' . $this->login . '.png';
+        } else {
+            return '/images/defaultlogo.png';
+        } 
+    }
+
+    public function bg() {
+        if (file_exists( public_path() . '/userdata/bg/' . $this->login . '.png')) {
+            return '/userdata/bg/' . $this->login . '.png';
+        } else {
+            return '/images/defaultbg.png';
+        } 
+    }
+
 }

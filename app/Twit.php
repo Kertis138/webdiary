@@ -8,8 +8,14 @@ class Twit extends Model
 {
     protected $table = 'twits';
 
-    public function user()
-	{
+    protected $fillable = [
+        'twit', 'user_id', 'likes','name'
+    ];
+
+    protected $likes = 0;
+    protected $name = "Пусто";
+
+    public function user() {
     	return $this->hasMany('App\User', 'id');
 	}	
 }

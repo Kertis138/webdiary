@@ -54,3 +54,6 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+window.Noty = require('noty');
+require("../vendor/fontawesome/svg-with-js/js/fontawesome-all.min.js");

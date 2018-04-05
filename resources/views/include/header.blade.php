@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light" id="top-navbar">
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">WebDiary</a>
+    <a class="navbar-brand" href="{{ route('home') }}">Онлайн дневник</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     	<span class="navbar-toggler-icon"></span>
   	</button>
@@ -12,10 +12,10 @@
 			    <a class="nav-link active" href="#">Найти дневник</a>
 			  </li>				
 			  <li class="nav-item">
-			    <a class="nav-link active" href="{{ url('mydiary') }}">Мой дневник</a>
+			    <a class="nav-link active" href="{{ route('home') }}">Мой дневник</a>
 			  </li>
 			  <li class="nav-item">
-			    <a class="nav-link" href="#">Профиль</a>
+			    <a class="nav-link" href="{{ route('profile') }}">Профиль</a>
 			  </li>
 			</ul>
 		</div>
@@ -23,16 +23,16 @@
 			@if(Auth::guest())
 				<ul class="nav">
 				  <li class="nav-item">
-				    <a class="nav-link active" href="{{ url('login') }}">Вход</a>
+				    <a class="nav-link active" href="{{ route('login') }}">Вход</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="{{ url('register') }}">Регистрация</a>
+				    <a class="nav-link" href="{{ route('register') }}">Регистрация</a>
 				  </li>
 				</ul>
 			@else
 				<ul class="nav">
 				  <li class="nav-item">
-				    <a class="nav-link" href="{{ url('login') }}">{{ Auth::user()->name }}</a>
+				    <a class="nav-link" href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выход</a>
