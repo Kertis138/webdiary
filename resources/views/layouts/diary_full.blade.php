@@ -23,36 +23,53 @@
         
         <div class="container h-100">
             <div class="row h-100">
-                <ul class="nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        <span class="t1">Записи</span>
-                        <span class="t2" id="twits_count">{{count($twits)}}</span>
-                        <div class="t3"></div>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="t1">Читатели</span>
-                        <span class="t2">4534</span>
-                        <div class="t3"></div>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="t1">Читаемые</span>
-                        <span class="t2">0</span>
-                        <div class="t3"></div>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="t1">Нравится</span>
-                        <span class="t2">9893</span>
-                        <div class="t3"></div>
-                    </a>
-                  </li>
-                </ul>
+                <div class="col-10">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span class="t1">Записи</span>
+                            <span class="t2" id="twits_count">{{count($twits)}}</span>
+                            <div class="t3"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="t1">Читатели</span>
+                            <span class="t2">{{count($follows)}}</span>
+                            <div class="t3"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="t1">Читаемые</span>
+                            <span class="t2">{{count($subs)}}</span>
+                            <div class="t3"></div>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span class="t1">Нравится</span>
+                            <span class="t2">9893</span>
+                            <div class="t3"></div>
+                        </a>
+                      </li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    @auth
+
+                        @if(count($follows->where("follow_id",Auth::user()->id)) > 0 )
+                             <a class="btn" id="notread_diary" href="{{route("notread_diary", $diary_user->login)}}">Отписаться</a>
+                        @else
+                            @if(Auth::user()->login != $diary_user->login)
+                                <a class="btn" id="read_diary" href="{{route("read_diary", $diary_user->login)}}">Читать</a>
+                            @endif
+                        @endif
+
+
+
+                    @endauth
+                </div>
             </div>
         </div>
 

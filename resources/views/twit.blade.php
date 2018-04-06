@@ -10,12 +10,14 @@
                   </button>
                   <div class="dropdown-menu" aria-labelledby="twit_note_dd">
 
-                    @if($diary_user->login == Auth::user()->login)
-                        <a class="dropdown-item delete-twit" href="#">
-                            <i class="fas fa-trash-alt" style="color:red;"></i>
-                            Удалить
-                        </a>
-                    @endif
+                    @auth
+                        @if($diary_user->login == Auth::user()->login)
+                            <a class="dropdown-item delete-twit" href="#">
+                                <i class="fas fa-trash-alt" style="color:red;"></i>
+                                Удалить
+                            </a>
+                        @endif
+                    @endauth
                   </div>
                 </div>    
 

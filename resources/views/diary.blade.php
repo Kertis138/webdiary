@@ -7,18 +7,21 @@
     Записи
 </div>
 
-@if($diary_user->login == Auth::user()->login)
-    <div class="row" id="add-notes">
-        <div id="add_notes_photo">
-        </div>
-        <div class="form-group col-10">
-            <textarea class="form-control col-12" id="addnote_textarea" rows="1" placeholder="Что нового?"></textarea>
-            <div class="d-flex justify-content-end">
-                <button type="button" class="btn" id="push_note">Опубликовать</button>
+
+@auth
+    @if($diary_user->login == Auth::user()->login)
+        <div class="row" id="add-notes">
+            <div id="add_notes_photo">
+            </div>
+            <div class="form-group col-10">
+                <textarea class="form-control col-12" id="addnote_textarea" rows="1" placeholder="Что нового?"></textarea>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn" id="push_note">Опубликовать</button>
+                </div>
             </div>
         </div>
-    </div>
-@endif
+    @endif
+@endauth
 
 <div id="twits_wrapper">
     @include("twitlist", ["twits"=>$twits])

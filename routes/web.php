@@ -25,4 +25,5 @@ Route::group(['prefix' => '/inapi'], function () {
 	Route::delete('twit/{id}', 'TwitController@delete');
 });
 
-
+Route::get("/read_diary/{login}", "DiaryController@read_diary")->name("read_diary");
+Route::get("/notread_diary/{login}", "DiaryController@notread_diary")->name("notread_diary");

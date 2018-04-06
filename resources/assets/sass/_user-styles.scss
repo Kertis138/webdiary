@@ -90,3 +90,26 @@ $bg-height: 380px;
 
 	
 }
+
+
+//Subs
+
+#read_diary {
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #60a5ef;
+	margin-top: 10px;
+	color: white;
+	font-weight: bold;
+}
+
+#notread_diary {
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: white;
+	margin-top: 10px;
+	color: #60a5ef;
+	border: 2px solid #6aaff3;
+	font-weight: bold;
+}
+
