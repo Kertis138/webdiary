@@ -102,13 +102,39 @@ class DiaryController extends Controller
             return abort(404);
 
 
-        $me = Sub::where("follow_id",$user->id)->where("user_id",$toUser->id);
-        if($me != null)
-            return abort(404);
+        $me = Sub::where("follow_id",$user->id)->where("user_id",$toUser->id)->first();
+        if($me !== null)
+            return abort(500);
 
         Sub::create(["user_id"=>$toUser->id, "follow_id"=>$user->id]);
 
         return redirect()->back();
     }
+
+
+    public function notread_diary($login) {
+        $user = Auth::user();
+        
+        if ($user == null)
+            return redirect()->route("login");     
+        
+        if ($user->login == $login)
+            return redirect()->back();
+
+        $toUser = User::where("login", $login)->first();
+        if ($toUser == null)
+            return abort(404);
+
+        $me = Sub::where("follow_id",$user->id)->where("user_id",$toUser->id)->first();
+        if($me == null)
+            return abort(404);
+
+        $find = Sub::where(["user_id"=>$toUser->id, "follow_id"=>$user->id]);
+        if($find != null)
+            $find->delete();
+
+        return redirect()->back();
+    }
+
 
 }
