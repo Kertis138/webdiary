@@ -26,21 +26,21 @@
                 <div class="col-10">
                     <ul class="nav">
                       <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="{{route("diary",$diary_user->login)}}">
                             <span class="t1">Записи</span>
                             <span class="t2" id="twits_count">{{count($twits)}}</span>
                             <div class="t3"></div>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route("followers", $diary_user->login)}}">
                             <span class="t1">Читатели</span>
                             <span class="t2">{{count($follows)}}</span>
                             <div class="t3"></div>
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route("read", $diary_user->login)}}">
                             <span class="t1">Читаемые</span>
                             <span class="t2">{{count($subs)}}</span>
                             <div class="t3"></div>
@@ -93,7 +93,7 @@
                 {{$diary_user->location}}
             </div>
             <div>
-                <a href="#">
+                <a href="{{$diary_user->link}}">
                     <i class="fas fa-link"></i>
                     {{$diary_user->link}}
                 </a>

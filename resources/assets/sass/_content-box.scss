@@ -1,4 +1,4 @@
-$imglogo-size: 48px;
+$imglogo-size: 50px;
 
 #content-title {
 		border-bottom: 1px solid #c7c7c7;
@@ -76,20 +76,29 @@ $imglogo-size: 48px;
 			}
 		}
 
-		.twit_photo {
-			height: $imglogo-size;
-			width: $imglogo-size;
-			background-image: url("../img/defaultlogo.png");
-			background-size: cover;
-			background-repeat: no-repeat;
-			border-radius: 50%;
-			border: 1px solid white;
-		}
+
 	}
 }
 
+
+.twit_photo {
+	height: $imglogo-size;
+	width: $imglogo-size;
+	background-image: url("../img/defaultlogo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	border: 1px solid white;
+	margin-left:-15px;
+	padding: 0px;
+}
+
 .twit_content {
-	padding-left: 10px;
+	margin-left: -30px;
+	svg {
+		position: relative;
+		right: -30px;
+	}	
 }
 
 .twittitle_name {

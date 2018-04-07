@@ -1,8 +1,10 @@
 <div class="row twitroot">
     <div class="container twitblock">
         <div class="row">
-            <div class="col-1 twit_photo"></div>
-            <div class="col-11 twit_content">
+            <div class="col-2">
+                <div class="twit_photo"></div>
+            </div>
+            <div class="col-10 twit_content">
 
                 <div class="dropdown" id="{{$twit->id}}">
                   <button type="button" id="twit_note_dd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

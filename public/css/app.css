@@ -36,8 +36,8 @@
 }
 
 #add-notes #add_notes_photo {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   background-image: url(/images/defaultlogo.png?3c1dd0093935902659e99bef56aa4ce6);
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,18 +107,25 @@
   outline: none;
 }
 
-#twits_wrapper .twitblock .twit_photo {
-  height: 48px;
-  width: 48px;
+.twit_photo {
+  height: 50px;
+  width: 50px;
   background-image: url(/images/defaultlogo.png?3c1dd0093935902659e99bef56aa4ce6);
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
   border: 1px solid white;
+  margin-left: -15px;
+  padding: 0px;
 }
 
 .twit_content {
-  padding-left: 10px;
+  margin-left: -30px;
+}
+
+.twit_content svg {
+  position: relative;
+  right: -30px;
 }
 
 .twittitle_name {
@@ -157,7 +164,7 @@
 #user-diary-status ul > li > a {
   color: #657786;
   font-weight: bold;
-  letter-spacing: .02em;
+  leter-spacing: .02em;
   -webkit-transition: color .15s ease-in-out;
   transition: color .15s ease-in-out;
   padding-top: 10px;
@@ -225,7 +232,7 @@
   background-color: #f8f9fa;
   margin-top: 15px;
   border: 1px solid #f1eded;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 #read_diary {
@@ -269,6 +276,50 @@
 
 #save_profile {
   background-color: #94cdf1;
+}
+
+.follows_photo {
+  height: 50px;
+  width: 50px;
+  background-image: url(/images/defaultlogo.png?3c1dd0093935902659e99bef56aa4ce6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid white;
+  margin-right: 20px;
+}
+
+.user_data {
+  padding-left: 10px;
+  margin-top: -10px;
+}
+
+.user_list_link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.user_list_link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.userlistroot {
+  border-top: 1px solid #d2c8c8;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.userlistroot .check {
+  position: absolute;
+  right: 25px;
+  top: 17px;
+  font-size: 1.5em;
+  color: transparent;
+}
+
+.userlistroot:hover .check {
+  color: #4069dc;
 }
 
 /*!
