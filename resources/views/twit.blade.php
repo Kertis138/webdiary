@@ -2,7 +2,14 @@
     <div class="container twitblock">
         <div class="row">
             <div class="col-2">
-                <div class="twit_photo"></div>
+                <div class="twit_photo" id="twit_photo-{{$twit->id}}"></div>
+
+                <style>
+                    #twit_photo-{{$twit->id}} {
+                        background-image: url({{$twit->getuser()->logo()}}) !important;
+                    }
+                </style>
+
             </div>
             <div class="col-10 twit_content">
 
@@ -24,9 +31,9 @@
                 </div>    
 
                 <div class="row twittitle_name">
-                    {{$diary_user->name}}
-                    <span>{{'@'.$diary_user->login}}</span>
-                    <span>{{date_format($diary_user->created_at,"d.m.Yг.")}}</span>
+                    {{$twit->getUser()->name}}
+                    <span>{{'@'.$twit->getUser()->login}}</span>
+                    <span>{{date_format($twit->getUser()->created_at,"d.m.Yг.")}}</span>
                 </div>
                 <div class="row twittext">
                     <div class="">{!! $twit->twit !!}</div>

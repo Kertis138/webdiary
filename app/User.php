@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Twit as Twit;
+use App\Like as Like;
 
 class User extends Authenticatable
 {
@@ -43,4 +45,23 @@ class User extends Authenticatable
         } 
     }
 
+    public function getLikeCount() {
+        return count(Like::where("user_id", $this->id)->get());
+    }
+
+    public function getLikeTwits() {
+        return Like::where("user_id", $this->id)->get();
+    }
+
+    public function getTwits() {
+       return Twit::where('user_id',$this->id)->get()->sortByDesc("created_at");
+    }
+
+    public function getFollows() {
+       return Sub::where('user_id', $this->id)->get();
+    }
+
+    public function getSubs() {
+        return Sub::where('follow_id', $this->id)->get();
+    }
 }

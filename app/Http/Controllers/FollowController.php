@@ -96,5 +96,21 @@ class FollowController extends Controller
 
 		return view("read", ["follows_user"=>$users, "diary_user"=>$toUser, "twits"=>$twits, "subs"=>$subs, "follows"=>$follows]);
     }
+    public function likeme($login) {
+        
+        $diary_user = User::where("login", $login)->first();
+        if ($diary_user == null)
+            return abort(404);
 
+        $likesObj = $diary_user->getLikeTwits();   
+        $twits = array();
+        foreach ($likesObj as $likeObj) {
+            array_push($twits, $likeObj->getTwit());
+        }
+
+        $follows = Sub::where("user_id",$diary_user->id)->get();
+        $subs = Sub::where('follow_id', $diary_user->id)->get();
+
+        return view("likeme", ["diary_user"=>$diary_user, "twits"=>$twits, "subs"=>$subs, "follows"=>$follows]);
+    }
 }

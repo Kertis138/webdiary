@@ -41,14 +41,9 @@ class DiaryController extends Controller
         if ($diary_user == null) {
            return abort(404);
         }
-
-
-        $twits = Twit::where('user_id',$diary_user->id)->get()->sortByDesc("created_at");
-        $follows = Sub::where('user_id', $diary_user->id)->get();
-        $subs = Sub::where('follow_id', $diary_user->id)->get();
         
 
-        return view('diary', ["twits"=>$twits, "diary_user"=>$diary_user, "follows"=>$follows, "subs"=>$subs]);
+        return view('diary', ["diary_user"=>$diary_user]);
     }
 
     public function profile() {
@@ -56,10 +51,7 @@ class DiaryController extends Controller
         if ($user === null) {
            return redirect()->route("login");
         }
-        $twits = Twit::where('user_id',$user->id)->get()->sortByDesc("created_at");
-        $follows = Sub::where('user_id', $user->id)->get();
-        $subs = Sub::where('follow_id', $user->id)->get();
-        return view('profile', ["diary_user"=>$user, "twits"=>$twits, "follows"=>$follows,"subs"=>$subs]);
+        return view('profile', ["diary_user"=>$user]);
     }
 
     public function profile_save_create(Request $request) {
@@ -89,4 +81,13 @@ class DiaryController extends Controller
         return back()->with('success','Успешно');
     }
 
+
+    public function searchDiary() {
+        $user = Auth::user();
+        // if ($user === null) {
+        //    return redirect()->route("login");
+        // }
+        $users = User::get();
+        return view("searchdiary", ["diary_user"=>$user, "users"=>$users]);
+    }
 }

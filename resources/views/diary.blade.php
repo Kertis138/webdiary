@@ -24,7 +24,7 @@
 @endauth
 
 <div id="twits_wrapper">
-    @include("twitlist", ["twits"=>$twits])
+    @include("twitlist", ["twits"=>$diary_user->getTwits()])
 </div>
 
 @endsection

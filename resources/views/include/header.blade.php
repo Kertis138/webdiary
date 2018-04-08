@@ -9,7 +9,7 @@
 	  	<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
 			<ul class="nav">
 			  <li class="nav-item">
-			    <a class="nav-link active" href="#">Найти дневник</a>
+			    <a class="nav-link active" href="{{route("searchdiary")}}">Найти дневник</a>
 			  </li>				
 			  <li class="nav-item">
 			    <a class="nav-link active" href="{{ route('home') }}">Мой дневник</a>

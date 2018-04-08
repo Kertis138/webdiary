@@ -23,7 +23,7 @@
 
         @include('include.header')
 
-        @yield('content');
+        @yield('content')
     </div>
 <script>
     window.Laravel = <?php echo json_encode([

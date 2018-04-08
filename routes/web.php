@@ -10,6 +10,7 @@ Route::group(['prefix' => '/diary'], function () {
 	Route::get('/{login}', 'DiaryController@diary')->name('diary');
 });
 Route::get('/profile', 'DiaryController@profile')->name('profile');
+Route::get('/searchdiary', 'DiaryController@searchdiary')->name('searchdiary');
 
 Route::post('/profile_save', 'DiaryController@profile_save_create')->name('profile_save');
 Route::get('/profile_save', function() {
@@ -31,3 +32,4 @@ Route::get("/notread_diary/{login}", "FollowController@notread_diary")->name("no
 
 Route::get('/followers/{login}',"FollowController@followers")->name("followers");
 Route::get('/read/{login}',"FollowController@read")->name("read");
+Route::get('/likeme/{login}',"FollowController@likeme")->name("likeme");
