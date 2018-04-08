@@ -144,6 +144,35 @@
   padding-left: 10px;
 }
 
+.likediv {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.likediv svg {
+  margin-left: -25px;
+}
+
+.likediv:hover * {
+  color: #5da2e0;
+}
+
+.likediv:hover.likey * {
+  color: gray;
+}
+
+.likediv:hover.liken * {
+  color: #5da2e0;
+}
+
+.likediv.likey * {
+  color: #5da2e0;
+}
+
+.likediv.liken * {
+  color: gray;
+}
+
 #userbg {
   height: 380px;
   width: 100%;

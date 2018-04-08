@@ -116,3 +116,26 @@ $imglogo-size: 50px;
 .twittest {
 	padding-left: 10px;
 }
+
+.likediv {
+	margin-top: 10px;
+	cursor: pointer;
+	svg {
+		margin-left: -25px;
+	}
+	&:hover {
+		*{color: #5da2e0;}
+		&.likey {
+			*{color: gray;}
+		}
+		&.liken {
+			*{color: #5da2e0;}
+		}
+	}
+	&.likey {
+		*{color: #5da2e0;}
+	}
+	&.liken {
+		*{color: gray;}
+	}	
+}

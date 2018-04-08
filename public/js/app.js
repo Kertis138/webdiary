@@ -13686,6 +13686,7 @@ module.exports = __webpack_require__(40);
 
 __webpack_require__(12);
 __webpack_require__(38);
+__webpack_require__(48);
 
 Noty.overrideDefaults({
     layout: 'bottomRight',
@@ -39124,6 +39125,55 @@ $('#twits_wrapper').delegate(".delete-twit", "click", function () {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports) {
+
+var likediv = $('.likediv');
+
+$('.twitpanel').delegate(".likediv", "click", function () {
+	var id = $(this).attr("id");
+	var me = $(this);
+	$.ajax({
+		headers: {
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		},
+		type: "POST",
+		url: "/inapi/like/" + id,
+		data: {},
+		success: function success($data) {
+			console.log($data);
+			if ($data == 0) {
+				//error
+				return;
+			}
+
+			var t = me.children().first();
+			if ($data == 1) {
+				//created 
+				t.html(parseInt(t.html()) + 1);
+				me.addClass("likey");
+				me.removeClass("liken");
+			} else if ($data == -1) {
+				//deleted
+				t.html(parseInt(t.html()) - 1);
+				me.addClass("liken");
+				me.removeClass("likey");
+			}
+		},
+		error: function error($data) {
+			console.log($data);
+		}
+	});
+});
 
 /***/ })
 /******/ ]);

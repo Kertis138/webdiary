@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Twit as Twit;
 use App\User as User;
+use App\Like as Like;
 
 class TwitController extends Controller
 {
@@ -37,5 +38,19 @@ class TwitController extends Controller
         	return -1;
         $twit->delete();
         return 204;
+    }
+
+    public function like($twit_id) {
+        $user = Auth::user();
+        if ($user == null)
+            return 0;
+
+        $like = Like::where(['twit_id'=>$twit_id, 'user_id'=>$user->id])->first();
+        if($like == null) {
+            $like = Like::create(['twit_id'=>$twit_id, 'user_id'=>$user->id]);
+            return 1;
+        }
+        $like->delete();
+        return -1;
     }
 }

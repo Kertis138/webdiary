@@ -23,6 +23,7 @@ Route::group(['prefix' => '/inapi'], function () {
 	Route::get('twits/{user_id}', "TwitController@getall");
 	Route::post('createtwit', "TwitController@create");
 	Route::delete('twit/{id}', 'TwitController@delete');
+	Route::post('like/{twit_id}', 'TwitController@like');
 });
 
 Route::get("/read_diary/{login}", "FollowController@read_diary")->name("read_diary");

@@ -1,5 +1,6 @@
 require('./bootstrap');
 require('./push_note');
+require('./likediv');
 
 
 Noty.overrideDefaults({

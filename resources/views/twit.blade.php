@@ -28,8 +28,11 @@
                     <span>{{'@'.$diary_user->login}}</span>
                     <span>{{date_format($diary_user->created_at,"d.m.Yг.")}}</span>
                 </div>
-                <div class="row twittest">
+                <div class="row twittext">
                     <div class="">{!! $twit->twit !!}</div>
+                </div>
+                <div class="row twitpanel d-flex justify-content-start">
+                    <div class="likediv {{$twit->hasLike(Auth::user())?'likey':'liken'}}" id="{{$twit->id}}"><span>{{$twit->likes()}}</span><i class="fas fa-heartbeat"></i></div>
                 </div>
             </div>
         </div>
